@@ -189,7 +189,7 @@ directory as your notebook.
 
 ### Using Jupyter Notebook / VS Code
 1. Open the project folder in your preferred IDE (e.g., Visual Studio Code).
-2. Ensure that your cars.csv dataset is saved in the same project folder.
+2. Ensure that your board2.xlsx dataset is saved in the same project folder.
 3. Open `Bernaldez_Assignment_4.ipynb`.
 4. Ensure your Python environment has the pandas library installed.
 5. Execute the cells from top to bottom.
