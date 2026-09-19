@@ -163,3 +163,34 @@ print('Track: Communication has the highest sample mean Average at 67.97.')
 print('Gender: Male has the highest sample mean Average at 67.18.')
 print('Hometown: Luzon has the highest sample mean Average at 68.08.')
 
+```
+## Project File Structure
+```text
+Bernaldez---Programming-Assignment-4/
+│
+├── Bernaldez_Assignment_4.ipynb    # Main Jupyter Notebook
+├── board2.xlsx                     # ECE Board Exam 2 source dataset
+└── README.md                       # Project documentation
+```
+## How to Run
+### Using Terminal / Command Prompt
+1. Clone or download the repository to your local machine.
+2. Ensure that the board2.xlsx dataset is saved in the exact same
+directory as your notebook.
+3. Open your terminal or command prompt and navigate to the project directory:
+   ```bash
+   git clone <your-github-repository-link> cd Bernaldez---Programming-Assignment-4
+
+4. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+
+ 5. Open `Bernaldez_Assignment_4.ipynb` from the browser interface and run all cells sequentially (`Cell > Run All`).
+
+### Using Jupyter Notebook / VS Code
+1. Open the project folder in your preferred IDE (e.g., Visual Studio Code).
+2. Ensure that your cars.csv dataset is saved in the same project folder.
+3. Open `Bernaldez_Assignment_4.ipynb`.
+4. Ensure your Python environment has the pandas library installed.
+5. Execute the cells from top to bottom.
+6. Ensure that your `board2.xlsx` dataset is saved in the exact same directory as your notebook.
