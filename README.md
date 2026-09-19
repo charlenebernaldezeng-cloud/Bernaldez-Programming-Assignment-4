@@ -23,14 +23,11 @@ also involves calculating category means and presenting comparisons using
 bar charts.
 
 The main programming concepts demonstrated are:
-* Loading an Excel dataset into a Pandas DataFrame.
-* Creating a calculated `Average` column.
-* Filtering rows using multiple categorical conditions.
-* Selecting specific columns from a DataFrame.
-* Filtering numerical values using Boolean conditions.
-* Computing group means using Pandas `groupby()`.
-* Creating bar charts for categorical comparisons.
-* Interpreting observed sample means without assuming causation.
+* managing data using Pandas.
+* Filtering and selecting DataFrame data.
+* Calculating averages and group means.
+* Creating bar charts for data comparison.
+* Interpreting the observed results.
 
 ---
 
@@ -74,3 +71,28 @@ display(VisComm)
 
 # Display the number of rows
 print('\nNumber of rows:', len(VisComm))
+
+```
+### B. Visayas Female DataFrame
+
+* *Description:* Creates a second DataFrame named VisFemale containing
+female students whose Hometown is Visayas. Only the required columns are
+retained. A second filter displays students whose Average is at least 60
+without overwriting the original VisFemale DataFrame.
+
+code:
+
+```python
+# Create VisFemale
+VisFemale = df[(df['Hometown'] == 'Visayas') & 
+               (df['Gender'] == 'Female')]
+
+# Retain only the required columns
+VisFemale = VisFemale[['Name', 'Track', 'GEAS', 'Electronics', 'Average']]
+
+# Display VisFemale
+display(VisFemale)
+
+# Display students with Average at least 60
+print('Students with Average >= 60:')
+display(VisFemale[VisFemale['Average'] >= 60])
