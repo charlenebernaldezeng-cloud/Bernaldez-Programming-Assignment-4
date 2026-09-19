@@ -96,3 +96,70 @@ display(VisFemale)
 # Display students with Average at least 60
 print('Students with Average >= 60:')
 display(VisFemale[VisFemale['Average'] >= 60])
+
+
+```
+### C. Category-Average Visualization
+
+* *Description:* Examines how the recorded Average differs across the
+categorical features Track, Gender, and Hometown. The mean Average for
+each category is calculated using Pandas, followed by three summary
+tables and three bar charts in one figure.
+
+code:
+```python
+
+# Read the Excel file
+df = pd.read_excel('board2.xlsx')
+
+# Generate the Average column
+df['Average'] = df[['Math', 'Electronics', 'GEAS', 'Communication']].mean(axis=1)
+
+# a. Compute the mean Average for each category
+
+track_mean = df.groupby('Track')['Average'].mean()
+gender_mean = df.groupby('Gender')['Average'].mean()
+hometown_mean = df.groupby('Hometown')['Average'].mean()
+
+# b. Display the three summary tables
+
+print('Mean Average by Track:')
+display(track_mean.to_frame('Mean Average'))
+
+print('Mean Average by Gender:')
+display(gender_mean.to_frame('Mean Average'))
+
+print('Mean Average by Hometown:')
+display(hometown_mean.to_frame('Mean Average'))
+
+# c. Create one figure containing three bar charts
+
+fig, axes = plt.subplots(1, 3, figsize=(16, 5))
+
+track_mean.plot(kind='bar', ax=axes[0])
+axes[0].set_title('Mean Average by Track')
+axes[0].set_xlabel('Track')
+axes[0].set_ylabel('Mean Average')
+axes[0].tick_params(axis='x', rotation=45)
+
+gender_mean.plot(kind='bar', ax=axes[1])
+axes[1].set_title('Mean Average by Gender')
+axes[1].set_xlabel('Gender')
+axes[1].set_ylabel('Mean Average')
+axes[1].tick_params(axis='x', rotation=0)
+
+hometown_mean.plot(kind='bar', ax=axes[2])
+axes[2].set_title('Mean Average by Hometown')
+axes[2].set_xlabel('Hometown')
+axes[2].set_ylabel('Mean Average')
+axes[2].tick_params(axis='x', rotation=45)
+
+plt.tight_layout()
+plt.show()
+
+# d. Concise observations
+
+print('Track: Communication has the highest sample mean Average at 67.97.')
+print('Gender: Male has the highest sample mean Average at 67.18.')
+print('Hometown: Luzon has the highest sample mean Average at 68.08.')
+
